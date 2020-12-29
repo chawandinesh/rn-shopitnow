@@ -4,6 +4,7 @@ const constants = {
   Filters: 'Filters',
   Favorite: 'Favorite',
   Cart: 'Cart',
-  Profile: 'Profile'
+  Profile: 'Profile',
+  SearchItems: 'SearchItems'
 };
 export default constants;

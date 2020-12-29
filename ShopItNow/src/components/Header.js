@@ -7,6 +7,8 @@ import {
   Right,
   Drawer,
   Button,
+  Item,
+  Input,
   Icon,
   Badge,
   Title,
@@ -14,7 +16,7 @@ import {
 import {StyleSheet, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import constants from '../utils/constants';
-export default class  HeaderComponent extends Component {
+export default class HeaderComponent extends Component {
   constructor(props) {
     super(props);
     this.drawerRef = createRef(null);
@@ -24,7 +26,9 @@ export default class  HeaderComponent extends Component {
     return (
       <Header style={{backgroundColor: '#fff'}}>
         <Left>
-          <Button transparent  onPress={() => this.props.navigation.openDrawer()}>
+          <Button
+            transparent
+            onPress={() => this.props.navigation.openDrawer()}>
             <Icon name="menu" style={{color: 'black'}} />
           </Button>
         </Left>
@@ -34,18 +38,34 @@ export default class  HeaderComponent extends Component {
           </Title>
         </Body>
         <Right>
-          <TouchableOpacity style={styles.iconContainer}>
+          <TouchableOpacity style={styles.iconContainer} onPress={() => this.props.navigation.navigate(constants.SearchItems)}>
             <Icon name="search" style={{color: 'black'}} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.iconContainer} onPress={() => this.props.navigation.navigate(constants.Favorite)}>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => this.props.navigation.navigate(constants.Favorite)}>
             <Icon
               name="tag-outline"
               type="MaterialCommunityIcons"
               style={{color: 'black'}}
             />
           </TouchableOpacity>
-          <TouchableOpacity  style={styles.iconContainer} onPress={() => this.props.navigation.navigate(constants.Cart)} >
-            <Text style={{borderRadius:10, width:20,zIndex:3,textAlign:'center', color:'#fff', backgroundColor:'red', position:'absolute', right: 1}}>1</Text>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => this.props.navigation.navigate(constants.Cart)}>
+            <Text
+              style={{
+                borderRadius: 10,
+                width: 20,
+                zIndex: 3,
+                textAlign: 'center',
+                color: '#fff',
+                backgroundColor: 'red',
+                position: 'absolute',
+                right: 1,
+              }}>
+              1
+            </Text>
             <Icon
               name="cart-outline"
               type="Ionicons"
