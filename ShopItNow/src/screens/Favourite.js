@@ -21,9 +21,9 @@ export default class Filters extends Component {
   render() {
     return (
       <Container style={{backgroundColor: '#eee'}}>
-        <Header style={{backgroundColor: '#fff', alignItems:'center'}}>
+        {/* <Header style={{backgroundColor: '#fff', alignItems:'center'}}>
             <Text style={{fontWeight: 'bold', fontSize: 20, textAlign:'center', alignItems:'center'}}>Favorite</Text>
-        </Header>
+        </Header> */}
         <Body style={{flex: 1, flexDirection: 'row'}}>
           <Text>Empty</Text>
         </Body>

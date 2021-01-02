@@ -34,19 +34,27 @@ export default class HeaderComponent extends Component {
         </Left>
         <Body>
           <Title style={{color: 'black', fontWeight: 'bold'}}>
-            Shop It Now
+            {this.props.title.show ? (
+              <Text>{this.props.title.name}</Text>
+            ) : (
+              <Text>Shop It Now</Text>
+            )}
           </Title>
         </Body>
         <Right>
-          <TouchableOpacity style={styles.iconContainer} onPress={() => this.props.navigation.navigate(constants.SearchItems)}>
-            <Icon name="search" style={{color: 'black'}} />
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() =>
+              this.props.navigation.navigate(constants.SearchItems)
+            }>
+            <Icon name="ios-search-outline" type="Ionicons" style={{color: 'black'}} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.iconContainer}
             onPress={() => this.props.navigation.navigate(constants.Favorite)}>
             <Icon
-              name="tag-outline"
-              type="MaterialCommunityIcons"
+              name="ios-heart-outline"
+              type="Ionicons"
               style={{color: 'black'}}
             />
           </TouchableOpacity>

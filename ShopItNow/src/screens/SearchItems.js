@@ -17,17 +17,13 @@ import CardItems from '../components/CardItem';
 export default function SearchItems(props) {
   const [text, setText] = useState('');
   const products = useSelector((state) => state.products.data);
-  // const [state, setstate] = useState([])
-  console.log(products, 'state');
 
   const handleChangeItems = (items) => {
     setText(items);
     const abc = products.filter((e) =>
       e.name.trim().toLowerCase().includes(items.trim()),
     );
-    console.log(abc, 'abc');
   };
-  console.log(text);
   return (
     <Container>
       <Header
@@ -48,7 +44,11 @@ export default function SearchItems(props) {
             placeholder="Search"
             onChangeText={(text) => handleChangeItems(text)}
           />
-          <Icon name="ios-search" />
+          <Icon
+            name="ios-search-outline"
+            type="Ionicons"
+            style={{color: 'black'}}
+          />
         </Item>
         <Button transparent>
           <Text>Search</Text>
@@ -57,7 +57,6 @@ export default function SearchItems(props) {
       <Content style={{backgroundColor: '#eee'}}>
         <CardItems items={text} editable={true} />
       </Content>
-   
     </Container>
   );
 }

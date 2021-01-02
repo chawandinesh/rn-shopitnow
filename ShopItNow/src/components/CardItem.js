@@ -1,5 +1,11 @@
 import React, {Component, useEffect} from 'react';
-import {Image, Dimensions, View, TouchableOpacity, TouchableOpacityBase} from 'react-native';
+import {
+  Image,
+  Dimensions,
+  View,
+  TouchableOpacity,
+  TouchableOpacityBase,
+} from 'react-native';
 import {Card, CardItem, Text} from 'native-base';
 import {useSelector} from 'react-redux';
 import constants from '../utils/constants';
@@ -26,16 +32,17 @@ export const CardImageExample = (props) => {
       style={{
         justifyContent: 'space-between',
         flexDirection: 'row',
-        margin: 0,
         flexWrap: 'wrap',
         width: width,
       }}>
       {filteredProducts.map((e, idx) => (
         <TouchableOpacity
-
           key={idx}
-          onPress={() => props.navigation.navigate(constants.Product,{id: e.id})}>
-          <Card style={{width: width * 0.489, marginTop: 1}}>
+          onPress={() =>
+            props.navigation.navigate(constants.Product, {id: e.id})
+          }
+          style={{width: width * 0.5,marginTop: -5, overflow: 'hidden'}}>
+          <Card>
             <CardItem cardBody>
               <Image
                 source={e.image}
@@ -48,14 +55,14 @@ export const CardImageExample = (props) => {
                 <Text
                   style={{
                     fontWeight: 'bold',
-                    fontSize: 20,
+                    fontSize: 15,
                     width: '100%',
                   }}>
                   {e.name.slice(0, 15)}...
                 </Text>
               </View>
-              <Text style={{textAlign: 'left', color: 'gray', fontSize: 15}}>
-                {e.desc}
+              <Text style={{textAlign: 'left', color: 'gray', fontSize: 12}}>
+                {e.desc.slice(0,15)}...
               </Text>
               <Text
                 style={{textAlign: 'left', fontWeight: 'bold', width: '100%'}}>

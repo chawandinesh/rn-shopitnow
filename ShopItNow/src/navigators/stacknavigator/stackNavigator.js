@@ -25,22 +25,22 @@ export default function StackNavigator() {
       <Stack.Screen
         name={constants.Filters}
         component={Filters}
-        options={{headerShown: false}}
+        options={{headerTitleAlign:'center'}}
       />
       <Stack.Screen
         name={constants.Favorite}
         component={Favorite}
-        options={{headerShown: false}}
+        options={{headerTitleAlign:'center'}}
       />
       <Stack.Screen
         name={constants.Cart}
         component={Cart}
-        options={{headerShown: false}}
+        options={{headerTitleAlign:'center'}}
       />
       <Stack.Screen
         name={constants.Profile}
         component={Profile}
-        options={{headerShown: false}}
+        options={{headerTitleAlign:'center'}}
       />
       <Stack.Screen
         name={constants.SearchItems}
@@ -60,7 +60,7 @@ export default function StackNavigator() {
         <Stack.Screen
         name={constants.Product}
         component={ProductScreen}
-        options={{ headerTitleAlign:'center'}}
+        options={{ headerShown:false}}
       />
     </Stack.Navigator>
   );

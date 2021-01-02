@@ -10,7 +10,7 @@ import CardItem from '../components/CardItem';
 function HomeScreen(props) {
   return (
     <Container>
-      <HeaderComponent navigation={props.navigation} />
+      <HeaderComponent navigation={props.navigation} title={{show: false}} />
       <Content style={{backgroundColor: '#eee'}}>
         <CardItem editable={false} navigation = {props.navigation} />
       </Content>

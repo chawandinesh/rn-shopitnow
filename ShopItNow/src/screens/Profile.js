@@ -62,7 +62,7 @@ const Profile = (props) => {
 
   return (
     <Container style={{backgroundColor: '#eee'}}>
-      <Header style={{backgroundColor: '#fff', alignItems: 'center'}}>
+      {/* <Header style={{backgroundColor: '#fff', alignItems: 'center'}}>
         <Text
           style={{
             fontWeight: 'bold',
@@ -72,7 +72,7 @@ const Profile = (props) => {
           }}>
           Account
         </Text>
-      </Header>
+      </Header> */}
 
       <View style={{flex: 1}}>
         <View style={{justifyContent: 'center', alignItems: 'center', flex: 4}}>

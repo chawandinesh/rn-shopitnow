@@ -5,6 +5,12 @@ const initialState = {
   loginStatus: {
     data: [],
   },
+  cart: {
+    data: [],
+  },
+  wishlist: {
+    data: [],
+  },
   filters: {
     gender: ['Boys', 'Girls', 'Male', 'Female'],
     Price: ['Under $20', '$20 to $40', '$40 to $60', '$60 to $80', 'Over $80'],
@@ -27,7 +33,7 @@ const initialState = {
     error: false,
     data: [
       {
-        id: "01",
+        id: '01',
         name: 'Highlander Men Blue shirt',
         desc: 'good fit and comfort',
         price: '$56',
@@ -36,7 +42,7 @@ const initialState = {
         image: require('../../assets/images/shirt1.jpg'),
       },
       {
-        id: "02",
+        id: '02',
         name: 'Roadster White and red shirt',
         desc: 'nice and good comfort',
         price: '$23',
@@ -45,7 +51,7 @@ const initialState = {
         image: require('../../assets/images/shirt2.jpg'),
       },
       {
-        id: "03",
+        id: '03',
         name: 'Wrogon Blue shirt casual',
         desc: 'slim fit and good',
         price: '$24',
@@ -54,7 +60,7 @@ const initialState = {
         image: require('../../assets/images/shirt3.jpg'),
       },
       {
-        id: "04",
+        id: '04',
         name: 'Roadster brown checked',
         desc: 'good knowledge',
         price: '$32',
@@ -63,7 +69,7 @@ const initialState = {
         image: require('../../assets/images/shirt4.jpg'),
       },
       {
-        id: "05",
+        id: '05',
         name: 'Peter england shirt',
         desc: 'good fit',
         price: '$28',
@@ -72,7 +78,7 @@ const initialState = {
         image: require('../../assets/images/shirt5.jpg'),
       },
       {
-        id: "06",
+        id: '06',
         name: 'Roadster Black Checked',
         desc: 'black checked ...',
         price: '$19',
@@ -81,7 +87,7 @@ const initialState = {
         image: require('../../assets/images/shirt6.jpg'),
       },
       {
-        id: "07",
+        id: '07',
         name: 'Wrogon Red Black half sleeve',
         desc: 'fit comfort',
         price: '$21',
@@ -90,7 +96,7 @@ const initialState = {
         image: require('../../assets/images/shirt7.jpg'),
       },
       {
-        id: "08",
+        id: '08',
         name: 'Highlander White shirt',
         desc: 'well fabricated',
         price: '$29',
@@ -114,7 +120,25 @@ const reducer = (state = initialState, action) => {
           ...state.loginStatus,
           data: action.data,
         },
-      };  
+      };
+    case ACTION_TYPES.USER_CART:
+      console.log(action.data,'action.skfjks')
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          data: state.cart.data.push(action.data),
+        },
+      };
+    case ACTION_TYPES.USER_WISHLIST:
+      console.log(action.data,'action.sta')
+      return {
+        ...state,
+        wishlist: {
+          ...state.wishlist,
+          data: state.wishlist.data.push(action.data),
+        },
+      };
     case ACTION_TYPES.USER_FETCH_PRODUCTS:
       return state;
     default:
