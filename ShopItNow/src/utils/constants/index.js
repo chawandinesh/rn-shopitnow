@@ -5,6 +5,9 @@ const constants = {
   Favorite: 'Favorite',
   Cart: 'Cart',
   Profile: 'Profile',
-  SearchItems: 'SearchItems'
+  SearchItems: 'SearchItems',
+  SignIn: 'SignIn',
+  SignUp: 'SignUp',
+  Product: 'Product'
 };
 export default constants;

@@ -9,6 +9,9 @@ import Favorite from '../../screens/Favourite';
 import Cart from '../../screens/Cart';
 import Profile from '../../screens/Profile';
 import SearchItems from '../../screens/SearchItems';
+import SignIn  from '../../screens/SignIn'
+import SignUp from '../../screens/SignUp'
+import ProductScreen from '../../screens/ProductScreen'
 
 export default function StackNavigator() {
   const Stack = createStackNavigator();
@@ -43,6 +46,21 @@ export default function StackNavigator() {
         name={constants.SearchItems}
         component={SearchItems}
         options={{headerShown: false}}
+      />
+       <Stack.Screen
+        name={constants.SignIn}
+        component={SignIn}
+        options={{headerTitleAlign:'center'}}
+      />
+      <Stack.Screen
+        name={constants.SignUp}
+        component={SignUp}
+        options={{ headerTitleAlign:'center'}}
+      />
+        <Stack.Screen
+        name={constants.Product}
+        component={ProductScreen}
+        options={{ headerTitleAlign:'center'}}
       />
     </Stack.Navigator>
   );

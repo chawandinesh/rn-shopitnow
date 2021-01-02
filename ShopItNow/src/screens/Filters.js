@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
 import {Text, View, Dimensions} from 'react-native';
 import {
   Container,
@@ -14,41 +15,42 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 const {height, width} = Dimensions.get('window');
 
 const Filters = (props) => {
-  const filterTypes = [
-    {name: 'Gender', indent: false, backgroundColor: '#eee'},
-    {name: 'Price', indent: false, backgroundColor: '#eee'},
-    {name: 'Brand', indent: true, backgroundColor: '#fff'},
-  ];
+  const [filterType, setFilterType] = useState({type: 'Gender', data: ''});
+  const filterData = {
+    Gender: useSelector((state) => state.filters.gender),
+    Price: useSelector((state) => state.filters.Price),
+    Brand: useSelector((state) => state.filters.Brands),
+  };
 
-  const filterBrands = [
-    'Adidas',
-    'Bata',
-    "HRX",
-    'Nike',
-    'Peter England',
-    'Puma',
-    'Roadster',
-    'Wrogon',
-  ];
   const LeftSideFilters = (
     <List>
-      {filterTypes.map((e, idx) => (
+      {Object.keys(filterData).map((e, idx) => (
         <ListItem
-          noIndent={e.indent}
-          style={{borderBottomWidth: 0, backgroundColor: e.backgroundColor}}
+          onPress={() => {
+            setFilterType({...filterType, type: e});
+          }}
+          noIndent={true}
+          style={{backgroundColor: filterType.type === e ? '#fff' : null}}
           key={idx}>
           <Left>
-            <Text>{e.name}</Text>
+            <Text>{e}</Text>
           </Left>
         </ListItem>
       ))}
     </List>
   );
+  console.log(filterType)
 
   const RightSideFilters = (
     <List>
-      {filterBrands.map((e, idx) => (
-        <ListItem key={idx}>
+      {filterData[filterType.type].map((e, idx) => (
+        <ListItem
+          key={idx}
+          onPress={() => {
+            setFilterType({...filterType, data: e});
+          }}
+          noIndent={true}
+          style={{backgroundColor: filterType.data === e ? '#eee' : null}}>
           <Left>
             <Text>{e}</Text>
           </Left>
@@ -59,7 +61,7 @@ const Filters = (props) => {
 
   const BodyFilters = (
     <View style={{flex: 1, flexDirection: 'row'}}>
-      <View style={{flex: 2, elevation: 1, backgroundColor: '#eee'}}>
+      <View style={{flex: 2, elevation: 1, backgroundColor: '#eeeeee'}}>
         {LeftSideFilters}
       </View>
       <View style={{flex: 3, backgroundColor: '#fff', elevation: 1}}>

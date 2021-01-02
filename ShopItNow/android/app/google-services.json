@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "422800461133",
+    "project_id": "shopitnow-fa60c",
+    "storage_bucket": "shopitnow-fa60c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422800461133:android:72d08ce0bfbf4ad102fb04",
+        "android_client_info": {
+          "package_name": "com.shopitnow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422800461133-bg69l9ailuldlku6pt5sn1k33i78gdcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDiyXq1uqV-qmU_tHTM_15RQJo5hFklec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422800461133-bg69l9ailuldlku6pt5sn1k33i78gdcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

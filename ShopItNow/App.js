@@ -1,13 +1,15 @@
 import React from 'react';
-import StackNavigator from './src/navigators/stacknavigator'
-import BottomSheet from './src/components/BottomActionSheet'
-import ReAnimatedSheet from './src/components/ReanimatedBottomSheet'
-import HomeDrawer from './src/navigators/drawernavigator/drawerNavigator'
-import CardItem from './src/components/CardItem'
-import {Text} from 'react-native';
+import HomeDrawer from './src/navigators/drawernavigator/drawerNavigator';
+import Signin from './src/screens/SignIn'
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store'
 
 const App = () => {
-  return <HomeDrawer/>;
+  return (
+    <Provider store={store}>
+      <HomeDrawer />
+    </Provider>
+  );
 };
 
 export default App;
